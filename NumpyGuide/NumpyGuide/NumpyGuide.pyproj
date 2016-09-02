@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>dc5d311b-ebd4-4c14-ab44-4914177b92f3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>NumpyGuide.py</StartupFile>
+    <StartupFile>Numpy-file.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,12 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Numpy-file.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Numpy-ndarray.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="NumpyGuide.py" />
   </ItemGroup>
   <PropertyGroup>
