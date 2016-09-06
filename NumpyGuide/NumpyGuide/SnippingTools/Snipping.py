@@ -133,7 +133,7 @@ class Snipping():
                     elif event.key == K_RETURN:
                         if self.start is not None and self.end is not None:
                             self._save()    
-                            self._nextpic()                             
+                            #self._nextpic()                             
                     elif event.key == K_LEFT:
                         self._prepic()
                     elif event.key == K_RIGHT:
@@ -158,6 +158,8 @@ class Snipping():
                     pass
                 elif event.type == MOUSEBUTTONUP:
                     self.end = pygame.mouse.get_pos()
+                    if self.start[0] > self.end[0]:
+                        self.start, self.end = self.end, self.start
                     self.mousepos = None
                     pass           
             pygame.display.update()
