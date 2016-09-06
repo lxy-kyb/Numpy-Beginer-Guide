@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>dc5d311b-ebd4-4c14-ab44-4914177b92f3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Numpy-file.py</StartupFile>
+    <StartupFile>Numpy-funciton.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,13 +22,23 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Numpy-file.py">
+    <Compile Include="Numpy-funciton.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Numpy-ndarray.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="NumpyGuide.py" />
+    <Compile Include="SnippingTools\Snipping.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SnippingTools\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SnippingTools\blackicon.png" />
+    <Content Include="SnippingTools\greenicon.png" />
+    <Content Include="SnippingTools\redicon.png" />
+    <Content Include="SnippingTools\Snipping.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
