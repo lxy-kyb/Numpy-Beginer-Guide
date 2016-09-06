@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>dc5d311b-ebd4-4c14-ab44-4914177b92f3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Numpy-funciton.py</StartupFile>
+    <StartupFile>SnippingTools\Snipping.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

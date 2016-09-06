@@ -5,13 +5,15 @@ from pygame.locals import *
  
 class Snipping():
     def __init__(self, configPath):
+        pygame.font.init()
         self.screen = pygame.display.set_mode((800, 600))                
         self.redicon = pygame.image.load('redicon.png')
         self.blackicon = pygame.image.load('blackicon.png')
-        self.greenicon = pygame.image.load('greenicon.png')
-        self.settitle('red')
+        self.greenicon = pygame.image.load('greenicon.png')        
         self.clock = pygame.time.Clock()
+        self.font = pygame.font.SysFont("monospace", 12)
         self._readConfig(configPath)
+        self.settitle('red')
 
     def _readConfig(self,configPath):
         config = ConfigParser.ConfigParser()
@@ -43,17 +45,29 @@ class Snipping():
         self.dic_green = dict()
         self.PicIndex = 0
 
+    def _reset(self):
+        self.start = None
+        self.end = None
+        self.mousepos = None
+  
+
     def settitle(self,colorName):
         self.color = pygame.color.THECOLORS[colorName]
         if self.color == pygame.color.THECOLORS["black"]:
             pygame.display.set_caption("black")
             pygame.display.set_icon(self.blackicon)
+            self._reset()
+            self._loadpic()
         elif self.color == pygame.color.THECOLORS["green"]:
             pygame.display.set_caption("green")
             pygame.display.set_icon(self.greenicon)
+            self._reset()
+            self._loadpic()
         else:
             pygame.display.set_caption("red")
             pygame.display.set_icon(self.redicon)
+            self._reset()
+            self._loadpic()
 
     def _save(self):
         self.screen.blit(self.pic ,[0,0])
@@ -137,6 +151,10 @@ class Snipping():
                         self._loadpic()
                         ret = pygame.Rect(self.start[0],self.start[1], pos[0] - self.start[0], pos[1] - self.start[1])
                         pygame.draw.rect(self.screen,self.color,ret, 1)
+                        font_start = self.font.render(str.format('({0}, {1})', self.start[0], self.start[1]),True,self.color)
+                        self.screen.blit(font_start, self.start)
+                        font_end = self.font.render(str.format('({0}, {1})', pos[0], pos[1]),True,self.color)
+                        self.screen.blit(font_end, pos)
                     pass
                 elif event.type == MOUSEBUTTONUP:
                     self.end = pygame.mouse.get_pos()
